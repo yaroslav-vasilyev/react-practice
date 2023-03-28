@@ -35,9 +35,11 @@ export const App = () => {
   const [currentProducts, setCurrentProducts] = useState(products);
   const [query, setQuery] = useState('');
 
-  const handleActive = event => setCurrentProducts(
-    getProductsByUserId(event.target.value),
-  );
+  const handleActive = (event) => {
+    const userName = getProductsByUserId(event.target.value);
+
+    return setCurrentProducts(userName);
+  };
 
   const handleInput = (event) => {
     setQuery(event.target.value);
